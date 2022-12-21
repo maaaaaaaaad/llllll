@@ -5,5 +5,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, World!")
+	var k int = 10
+	var p = &k
+	fmt.Println(*p)
 }
