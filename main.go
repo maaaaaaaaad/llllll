@@ -5,7 +5,11 @@ import (
 )
 
 func main() {
-	var k int = 10
-	var p = &k
-	fmt.Println(*p)
+	msg := "Hello"
+	var saying = say(msg)
+	fmt.Println(saying)
+}
+
+func say(msg string) string {
+	return msg
 }
