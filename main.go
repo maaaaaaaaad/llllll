@@ -5,9 +5,9 @@ import (
 )
 
 func main() {
-	names := []string{"a", "b", "c"}
-
-	for index, name := range names {
-		fmt.Println(index, name)
+	sum := 0
+	for i := 1; i <= 100; i++ {
+		sum += i
 	}
+	fmt.Println(sum)
 }
