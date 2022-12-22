@@ -5,12 +5,9 @@ import (
 )
 
 func main() {
-	msg := "Hello"
-	var saying = say(&msg)
-	fmt.Println(saying)
-}
-
-func say(msg *string) string {
-	*msg = "Changed"
-	return *msg
+	sum := 0
+	for i := 1; i <= 100; i++ {
+		sum += i
+	}
+	fmt.Println(sum)
 }
