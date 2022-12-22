@@ -5,9 +5,14 @@ import (
 )
 
 func main() {
-	sum := 0
-	for i := 1; i <= 100; i++ {
-		sum += i
-	}
-	fmt.Println(sum)
+	x := 4
+	y := 4
+
+	result := square(x, y)
+	fmt.Println(result)
+
+}
+
+func square(a int, b int) int {
+	return a + b
 }
