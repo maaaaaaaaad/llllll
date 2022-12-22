@@ -6,10 +6,11 @@ import (
 
 func main() {
 	msg := "Hello"
-	var saying = say(msg)
+	var saying = say(&msg)
 	fmt.Println(saying)
 }
 
-func say(msg string) string {
-	return msg
+func say(msg *string) string {
+	*msg = "Changed"
+	return *msg
 }
