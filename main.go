@@ -5,16 +5,14 @@ import (
 )
 
 func main() {
-	sum := 0
-	for i := 0; i <= 100; i++ {
-		sum += i
+	arr, i := []int{}, 0+1
+	for i <= 100 {
+		arr = append(arr, i)
+		i++
 	}
-	fmt.Println("sum:", sum)
-
-	sum2, j := 0, 0
-	for j <= 100 {
-		sum2 += j
-		j++
-	}
-	fmt.Println("sum2:", sum2)
+  result := 0
+  for index, _ := range arr {
+    result += arr[index]
+  }
+  fmt.Println(result)
 }
