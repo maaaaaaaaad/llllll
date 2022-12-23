@@ -2,14 +2,14 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"time"
 )
 
 func main() {
-	const (
-		A = iota + 0.75 + 0.25
-		B
-		C
-		D
-	)
-	fmt.Println(A + B + C + D)
+	rand.Seed(time.Now().UnixNano())
+	var key = []string{"mad", "woong", "integral"}
+	var index = rand.Intn(3)
+	result := key[index]
+	fmt.Println(result)
 }
