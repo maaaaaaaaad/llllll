@@ -5,8 +5,16 @@ import (
 )
 
 func main() {
-	name := []string{"mad", "woong", "integral"}
-	for index, name := range name {
-		fmt.Println(index, name)
+	sum := 0
+	for i := 0; i <= 100; i++ {
+		sum += i
 	}
+	fmt.Println("sum:", sum)
+
+	sum2, j := 0, 0
+	for j <= 100 {
+		sum2 += j
+		j++
+	}
+	fmt.Println("sum2:", sum2)
 }
