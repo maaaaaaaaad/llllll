@@ -5,8 +5,13 @@ import (
 	"main/lib"
 )
 
+var num int = 1000
+
+func init() {
+	fmt.Println("Start inspect your number:", num)
+}
+
 func main() {
-	member := []string{"mad", "woong", "integral"}
-	result := lib.Random(member)
+	result := lib.InspectNumberThan100(num)
 	fmt.Println(result)
 }
