@@ -5,13 +5,9 @@ import (
 	"main/lib"
 )
 
-var num int = 1000
-
-func init() {
-	fmt.Println("Start inspect your number:", num)
-}
-
 func main() {
-	result := lib.InspectNumberThan100(num)
-	fmt.Println(result)
+	num, changeNum := 2, 10
+	fmt.Println("init num:", num)
+	lib.ChangeNumber(&num, changeNum)
+	fmt.Println("change from pointer num:", num)
 }
