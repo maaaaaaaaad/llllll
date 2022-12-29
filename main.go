@@ -4,18 +4,12 @@ import (
 	"fmt"
 )
 
-func rpointer(a *int, b *int, f func(*int, *int) (int, int)) (int, int) {
-	return f(a, b)
-}
-
-func lounge(a *int, b *int) (r1 int, r2 int) {
-  r1 = *a * 50
-  r2 = *b * 20
-  return r1, r2
+func change[T int | int8 | int16 | int32 | int64](a *T, b *T) (r1 T, r2 T) {
+	return *a * 10, *b * 5
 }
 
 func main() {
 	p, q := 5, 6
-  w, z := rpointer(&p, &q, lounge)
-  fmt.Println(w, z)
+	result1, result2 := change(&p, &q)
+	fmt.Println(result1, result2)
 }
