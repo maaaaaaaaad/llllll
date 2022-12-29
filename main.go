@@ -1,11 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"main/lib"
+  "fmt"
 )
 
-func chance(a int, b int, f func(int, int) (r1 int, r2 int)) (x int, y int) {
+func chance(a *int, b *int, f func(*int, *int) (r1 int, r2 int)) (x int, y int) {
 	x, y := f(a,b)
 }
 
@@ -16,5 +15,7 @@ func change(a *int, b *int) (r1 int, r2 int) (r1 int, r2 int) {
 }
 
 func main() {
-	p, q := 10
-  }
+	p, q := 5, 6
+  result1, result2 := chance(p,q, change)
+  fmt.Println(p, q)  
+}
