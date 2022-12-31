@@ -4,9 +4,14 @@ import (
 	"fmt"
 )
 
+type person struct {
+	name string
+	age  int
+}
+
 func main() {
-	x := [3]int{1, 2, 3}
-	y := x[:]
-	y[0] = 10
-	fmt.Println(x, y)
+	mad := person{}
+	mad.name = "mad"
+	mad.age = 31
+	fmt.Println(mad)
 }
