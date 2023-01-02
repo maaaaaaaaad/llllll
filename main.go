@@ -9,9 +9,15 @@ type person struct {
 	age  int
 }
 
+func (person) greeting() string {
+	return "hello world!"
+}
+
 func main() {
-	mad := person{}
-	mad.name = "mad"
-	mad.age = 31
-	fmt.Println(mad)
+	mad := person{
+		name: "mad",
+		age:  31,
+	}
+	welcome := mad.greeting()
+	fmt.Println(welcome)
 }
