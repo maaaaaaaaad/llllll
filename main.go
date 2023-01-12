@@ -4,24 +4,25 @@ import (
 	"fmt"
 )
 
-type person struct {
-  name string
-  age int
+type mock struct {
+	first  int
+	second int
 }
 
-func (receiver *person) changer(name string , age int) {
-  receiver.name =  name
-  receiver.age = age
+type functions interface {
+	foo() int
+	bar() int
+}
+
+func foo() int {}
+func bar() int {}
+
+func call(arg functions) (int, int) {
+	a := foo()
+	b := bar()
+	return a, b
 }
 
 func main() {
- var human *person = new(person)
-  human.name = "mad"
-  human.age = 22
-
-  fmt.Println(human)
-
-  human.changer("in", 20)
-
-  fmt.Println(human)
+  
 }
