@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
-	"time"
 )
 
 type person struct {
@@ -12,22 +10,17 @@ type person struct {
 
 func main() {
 
-	m := []person{
-		{
-			name: "mad",
-		},
-		{
-			name: "intel",
-		},
-		{
-			name: "gogo",
-		},
-		{
-			name: "gral",
-		},
+	w, h := 98, 98
+	s := w * h
+
+	ds := 2*(2*98) + 4
+
+	r := (100 * 100) - ds
+
+	if s == r {
+		fmt.Println(true)
+	} else {
+		fmt.Println(false)
 	}
 
-	rand.Seed(time.Now().UnixNano())
-	random := rand.Intn(3 + 1)
-	fmt.Println(m[random])
 }
