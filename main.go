@@ -4,17 +4,8 @@ import (
 	"fmt"
 )
 
-func cone(r int, h int) int {
-	return (r * r * h) / 3
-}
-
 func main() {
-
-	r := 98
-	h := 98
-
-	s := cone(r, h)
-
-	fmt.Println(s)
-
+	var memory int
+	memory = 4
+	fmt.Printf("memory address %p, value %d", &memory, memory)
 }
