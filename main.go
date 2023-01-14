@@ -4,23 +4,17 @@ import (
 	"fmt"
 )
 
-type person struct {
-	name string
+func cone(r int, h int) int {
+	return (r * r * h) / 3
 }
 
 func main() {
 
-	w, h := 98, 98
-	s := w * h
+	r := 98
+	h := 98
 
-	ds := 2*(2*98) + 4
+	s := cone(r, h)
 
-	r := (100 * 100) - ds
-
-	if s == r {
-		fmt.Println(true)
-	} else {
-		fmt.Println(false)
-	}
+	fmt.Println(s)
 
 }
