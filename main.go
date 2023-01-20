@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+type x interface{
+  foo(n uint8) uint8
+}
+
 func foo(n uint8) uint8{
   fmt.Println(&n)
   return n
