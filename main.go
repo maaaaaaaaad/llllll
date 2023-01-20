@@ -2,22 +2,14 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"time"
 )
 
-type x interface{
-  foo(n uint8) uint8
-}
-
-func foo(n uint8) uint8{
-  fmt.Println(&n)
-  return n
-}
-
 func main() {
-	var memory uint8
-	memory = 7
-  fmt.Println(&memory)
-  result := foo(memory)
-  fmt.Println(&result)
-  fmt.Println(&result == &memory)
+	human := [4]string{"one", "two", "three", "four"}
+	rand.Seed(time.Now().UnixNano())
+	random := rand.Intn(4)
+	r := human[random]
+	fmt.Println(r)
 }
