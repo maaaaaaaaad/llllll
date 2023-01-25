@@ -48,7 +48,9 @@ L:
 				case initMoney == overPoint:
 					fmt.Println("seed money 0 game over")
 					break L
-
+				case initMoney >= loseCount:
+					initMoney -= loseCount
+					fmt.Println("lose! current money:", initMoney)
 				}
 			}
 		}
