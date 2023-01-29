@@ -3,19 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	s1 := []uint8{1, 2, 3}
-	s2 := append(s1, 4, 5)
+	a := [5]uint8{1, 2, 3, 4, 5}
+	s := a[1:2]
+	fmt.Println(s)
 
-	fmt.Println("s1:", s1, len(s1), cap(s1))
-	fmt.Println("s2:", s2, len(s2), cap(s2))
+	s[0] = 100
+	fmt.Println("a", len(a), cap(a), a)
+	fmt.Println("s:", len(s), cap(s), s)
 
-	s1[0] = 255
-
-	fmt.Println("s1:", s1, len(s1), cap(s1))
-	fmt.Println("s2:", s2, len(s2), cap(s2))
-
-	s1 = append(s1, 255)
-
-	fmt.Println("s1:", s1, len(s1), cap(s1))
-	fmt.Println("s2:", s2, len(s2), cap(s2))
+	s = append(s, 200, 250, 255)
+	fmt.Println("s:", len(s), cap(s), s)
 }
