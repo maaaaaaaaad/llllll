@@ -16,6 +16,11 @@ func main() {
 	changeA(a)
 	changeS(s)
 
-	fmt.Println(a)
-	fmt.Println(s)
+	p := []uint8{1, 2, 3}
+
+	q := append(p, 4, 5)
+	fmt.Println("q", q)
+
+  p = append(p, 100)
+  fmt.Println("p", p)
 }
