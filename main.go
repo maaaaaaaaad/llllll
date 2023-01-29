@@ -4,7 +4,10 @@ import "fmt"
 
 func main() {
 	a := [5]uint8{1, 2, 3, 4, 5} // len 5, cap 5
-	s := a[1:2]                  // len 1, cap 4
+	fmt.Printf("a: %v, len: %d, cap: %d\n", a, len(a), cap(a))
+	fmt.Printf("a memory: %p\n", &a)
+	s := a[1:2] // len 1, cap 4
+  fmt.Printf("s memory: %p\n", &s)
 
 	s[0] = 100 // s = [100], len 1, cap 4
 
