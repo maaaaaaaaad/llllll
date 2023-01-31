@@ -8,4 +8,8 @@ func main() {
 		x[i] = i + 1
 	}
 	fmt.Println("x:", x)
+
+	y := make([]int, len(x), cap(x))
+	copy(y, x)
+	fmt.Println("y:", y)
 }
