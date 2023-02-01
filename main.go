@@ -2,14 +2,19 @@ package main
 
 import "fmt"
 
-func main() {
-	x := make([]int, 5, 5)
-	for i := 0; i < len(x); i++ {
-		x[i] = i + 1
-	}
-	fmt.Println("x:", x)
+type account struct {
+	balance   int
+	firstName string
+	lastName  string
+}
 
-	y := make([]int, len(x), cap(x))
-	copy(y, x)
-	fmt.Println("y:", y)
+func (a1 *account) withdrawPointer(amount int) {
+	a1.balance -= amount
+}
+
+func main() {
+	var a *account = &account{100, "mad", "integral"}
+	fmt.Println("original a:", a)
+	a.withdrawPointer(20)
+	fmt.Println("new a:", a)
 }
