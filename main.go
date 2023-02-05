@@ -4,32 +4,16 @@ import (
 	"fmt"
 )
 
-type checkfields struct {
-	m int
-	n string
-	l float64
-}
-
-func check(v interface{}) {
-	switch t := v.(type) {
-	case int:
-		fmt.Printf("t is %d\n", t)
-	case string:
-		fmt.Printf("t is %s\n", t)
-	case float64:
-		fmt.Printf("t is %f\n", t)
+func checkType(n interface{}) {
+	switch t := n.(type) {
+	case uint8:
+		fmt.Println(t)
 	default:
-		fmt.Println("default:", t)
+		fmt.Println("n is not uint8")
 	}
 }
 
 func main() {
-	var a checkfields = checkfields{
-		m: 5,
-		n: "hello world",
-		l: 4.3,
-	}
-	check(a.m)
-	check(a.n)
-	check(a.l)
+	var m uint8 = 255
+	checkType(m)
 }
