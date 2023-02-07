@@ -4,16 +4,23 @@ import (
 	"fmt"
 )
 
-func checkType(n interface{}) {
-	switch t := n.(type) {
-	case uint8:
-		fmt.Println(t)
+type bundle interface {
+	checkInt(n interface{}) bool
+}
+
+func checkInt(n interface{}) bool {
+	switch n.(type) {
+	case int:
+		return true
 	default:
-		fmt.Println("n is not uint8")
+		return false
 	}
 }
 
 func main() {
-	var m uint8 = 255
-	checkType(m)
+	n, m := 255, "hi"
+	r1 := checkInt(n)
+	r2 := checkInt(m)
+  fmt.Print("r1:", r1)
+  fmt.Print("r1:", r1)
 }
