@@ -28,4 +28,14 @@ func main() {
 		location:    "x",
 	}
 	fmt.Println(m)
+
+	n := peer{
+		id:          2,
+		primary:     "def",
+		information: "qq",
+		location:    "y",
+	}
+
+	m.reload(n)
+	fmt.Println(m)
 }
