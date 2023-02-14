@@ -9,5 +9,14 @@ func main() {
 	for i := 0; i < len(a); i++ {
 		a[i] = i + 1
 	}
-	fmt.Println(a)
+
+	var b = make([]int, len(a), cap(a))
+	copy(b, a)
+	fmt.Println("a", a)
+	fmt.Println("b", b)
+
+	b[0] = 100
+
+	fmt.Println("after a", a)
+	fmt.Println("after b", b)
 }
