@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+type slice interface {
+	checkSlice(args []int)
+}
+
 func checkSlice(args []int) {
 	for i := 0; i < len(args); i++ {
 		args[i] += i + 10
