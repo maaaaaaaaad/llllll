@@ -27,5 +27,9 @@ func main() {
 		},
 	}
 
-	fmt.Println(members)
+	for _, member := range members {
+		fmt.Println("member:", member.name)
+	}
+
+	fmt.Println("random member:", members[key])
 }
