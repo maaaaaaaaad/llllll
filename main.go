@@ -6,30 +6,15 @@ import (
 	"time"
 )
 
-type member struct {
-	name string
-}
-
 func main() {
 	rand.Seed(time.Now().UnixNano())
-	var key uint8 = uint8(rand.Intn(3) + 1)
-	fmt.Println(key)
 
-	var members = []member{
-		member{
-			name: "mad",
-		},
-		member{
-			name: "integral",
-		},
-		member{
-			name: "mooze",
-		},
+	members := []string{
+		"mad",
+		"integral",
+		"woong",
 	}
 
-	for _, member := range members {
-		fmt.Println("member:", member.name)
-	}
-
-	fmt.Println("random member:", members[key])
+	random := uint8(rand.Intn(len(members)))
+	fmt.Println(members[random])
 }
