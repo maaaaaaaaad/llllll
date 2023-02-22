@@ -1,19 +1,46 @@
 package main
 
 import (
-	"container/list"
 	"fmt"
+	"math"
 )
 
+type Shape interface {
+	area() float64
+	perimeter() float64
+}
+
+type Rect struct {
+	width, height float64
+}
+
+type Circle struct {
+	radius float64
+}
+
+func (r Rect) area() float64 { return r.width * r.height }
+
+func (r Rect) perimeter() float64 {
+	return 2 * (r.width + r.height)
+}
+
+func (c Circle) area() float64 {
+	return math.Pi * c.radius * c.radius
+}
+func (c Circle) perimeter() float64 {
+	return 2 * math.Pi * c.radius
+}
 
 func main() {
-	v := list.New()
-  e1 := v.PushFront(1)
-  e2 := v.PushBack(2)
-  v.InsertAfter(3, e1)
-  v.InsertAfter(4, e2)
+	r := Rect{10., 20.}
+	c := Circle{10}
 
-  for e := v.Front(); e != nil; e = e.Next() {
-    fmt.Println(e.Value, "")
-  }
+	showArea(r, c)
+}
+
+func showArea(shapes ...Shape) {
+	for _, s := range shapes {
+		a := s.area()
+		fmt.Println(a)
+	}
 }
