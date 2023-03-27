@@ -1,15 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 func main() {
-	var x interface{}
-	x = 1
-	x = "Tom"
-
-	printIt(x)
-}
-
-func printIt(v interface{}) {
-	fmt.Println(v) //Tom
+	rand.Seed(time.Now().UnixNano())
+	m := []int{1, 2, 3, 4}
+	for _, value := range m {
+		fmt.Println(value)
+	}
 }
