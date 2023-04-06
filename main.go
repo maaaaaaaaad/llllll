@@ -1,22 +1,23 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
-	"io/ioutil"
-	"net/http"
 )
 
+type Member struct {
+	Name   string
+	Age    int
+	Active bool
+}
+
 func main() {
-	resp, err := http.Get("http://google.com")
+	mem := Member{"Alex", 10, true}
+	jsonBytes, err := json.Marshal(mem)
 	if err != nil {
 		panic(err)
 	}
+	jsonString := string(jsonBytes)
 
-	defer resp.Body.Close()
-
-	data, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Printf("%s\n", string(data))
+	fmt.Println(jsonString)
 }
