@@ -1,23 +1,19 @@
 package main
 
-import (
-	"encoding/json"
-	"fmt"
-)
+import "fmt"
 
-type Member struct {
-	Name   string
-	Age    int
-	Active bool
+const head = 4
+const diff = 9
+
+func sequence(n uint) uint {
+	if n == 1 {
+		return head
+	} else {
+		return sequence(n-1) + diff
+	}
 }
 
 func main() {
-	mem := Member{"Alex", 10, true}
-	jsonBytes, err := json.Marshal(mem)
-	if err != nil {
-		panic(err)
-	}
-	jsonString := string(jsonBytes)
-
-	fmt.Println(jsonString)
+	result := sequence(5)
+	fmt.Println(result)
 }
